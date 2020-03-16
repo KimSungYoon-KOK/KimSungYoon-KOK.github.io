@@ -4,7 +4,7 @@ title: Algorithm Study
 ---
 
 <div id="algorithm">
-  <h1>Algorithm</h1>
+  <h1 class="pageTitle">Algorithm</h1>
   <ul class="posts noList">
     {% for post in paginator.posts %}
       <li>

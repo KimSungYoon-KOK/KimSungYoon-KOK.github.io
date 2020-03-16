@@ -4,7 +4,21 @@ title: Project
 ---
 
 <div id="project">
-  <h1>Project</h1>
+  <h1 class="pageTitle">Project</h1>
+
+  <div class = "project">
+    <li class="project_item">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <img class="project_img" src="{{ '/assets/img/helloseoul.png' | prepend: site.baseurl }}">
+        <p class="project_title">설로</p>
+        <div class="project_info">
+          <h1 class="project_slogan">우리는 서울로 갑니다, 설로</h1>
+          <p class="project_summary">Open API를 이용한 서울시 관광 어플</p>
+          <p class="project_body">TestTestTestTestTestTestTestTest</p>
+        </div>
+    </li>
+  </div>
+
   <ul class="posts noList">
     {% for post in paginator.posts %}
       <li>

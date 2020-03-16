@@ -1,0 +1,27 @@
+I"�<div id="project">
+  <h1 class="pageTitle">Project</h1>
+
+  <div>
+    <li>
+      <a href="/_posts/project/helloseoul.markdown">
+        <img class="project-img" src="/assets/img/helloseoul.png" />
+        <p class="project_title">설로</p>
+        <div>
+          <h1 class="project_slogan">우리는 서울로 갑니다, 설로</h1>
+          <p class="project_summary">Open API를 이용한 서울시 관광 어플</p>
+          <p class="project_body">TestTestTestTestTestTestTestTest</p>
+        </div>
+    &lt;/li&gt;
+  &lt;/div&gt;
+
+  <ul class="posts noList">
+    
+  </ul>
+  <!-- Pagination links -->
+  <div class="pagination">
+    
+    
+  </div>
+&lt;/div&gt;
+</a></li></div></div>
+:ET
