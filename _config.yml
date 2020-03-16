@@ -15,7 +15,7 @@ navigation:
   - title: Home
     url: /index.html
   - title: Project
-    url: /project
+    url: /project.html
   - title: Algorithm
     url: /algorithm
   - title: About
