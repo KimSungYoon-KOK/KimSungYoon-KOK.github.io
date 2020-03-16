@@ -1,9 +1,7 @@
-remote_theme : brianmaierjr/long-haul
-
 title: Long Haul
 description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
 
-url:  "https://kok.github.io"
+url: http://brianmaierjr.github.com/long-haul
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
@@ -25,6 +23,6 @@ social:
   github: brianmaierjr
   twitter: brianmaierjr
   facebook: brianmaierjr
-  email: sungyun1997@gmail.com
+  email: brimaidesigns@gmail.com
 
 google_analytics: "UA-58263416-1"
