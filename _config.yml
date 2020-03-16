@@ -1,28 +1,36 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+# Profile information
+name: Fresh
+title: Fresh - Free Jekyll Theme
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+permalink: ':title/'
+baseurl: "/fresh" # the subpath of your site, e.g. /blog
+url: "artemsheludko.pw" # the base hostname & protocol for your site, e.g. http://example.com
 
-url: http://kok.github.io
-baseurl: ""
-paginate_path: "blog/page:num/"
-permalink: blog/:title/
+# Social
+facebook: #Add your Facebook
+twitter: #Add your Twitter
+google-plus: #Add your Google+
+github: #Add your Github
 
-markdown: kramdown
-highlighter: rouge
-plugins: [jekyll-paginate]
+# Contact form
+email: #your-email@domain.com
+
+# Comments
+discus-identifier: # Add your Disqus identifier
+
+# Paginate
 paginate: 5
+paginate_path: /page:num/
 
-navigation:
-  - title: Home
-    url: /index.html
-  - title: About
-    url: /about
-  - title: Contact
-    url: /contact
-
-social:
-  github: brianmaierjr
-  twitter: brianmaierjr
-  facebook: brianmaierjr
-  email: sungyun1997@gmail.com
-
-google_analytics: "UA-58263416-1"
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+exclude:
+  - Gemfile
+  - Gemfile.lock
+include: [_pages]
