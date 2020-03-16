@@ -185,6 +185,11 @@ audio:not([controls]) {
 img {
   border-style: none; }
 
+#my_img {
+  width: 60%;
+  height: auto;
+}
+
 /**
  * Hide the overflow in IE.
  */
