@@ -1,12 +1,7 @@
----
-layout: default
-title: About Kim Sung Yoon
----
-
-<div class="post">
+I"Ô<div class="post">
 	<h1 class="pageTitle">About Kim Sung Yoon</h1>
-	<img id="my_img" src="{{ '/assets/img/about.jpg' | prepend: site.baseurl }}" alt="">
-	<p class="intro">An aspiring technology-based entrepreneurs & developer!</p>
+	<img id="my_img" src="/assets/img/touring.jpg" alt="" />
+	<p class="intro">An aspiring technology-based entrepreneurs &amp; developer!</p>
 	<p>'Out of Bounds' is the first step to unlock the infinite potential beyond the boundaries of the world.</p>
 	<h2>Career</h2>
 	<ul>
@@ -17,5 +12,9 @@ title: About Kim Sung Yoon
   		<li>2018 Entrance into Computer Science Engineering at Konkuk Univ.</li>
       	<li>2020 ROTC 60</li>
   		<li>2020 A student representative of CSE</li>
+      	<li>Estimated Reading Time for posts</li>
+  		<li><a href="https://github.com/adobe-webplatform/dropcap.js">Drop Cap</a> on posts</li>
+  		<li><a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography">A Better Type Scale</a></li>
   	</ul>
 </div>
+:ET

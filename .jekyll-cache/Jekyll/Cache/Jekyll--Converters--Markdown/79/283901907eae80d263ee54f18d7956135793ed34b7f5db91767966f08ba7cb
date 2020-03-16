@@ -1,12 +1,7 @@
----
-layout: default
-title: About Kim Sung Yoon
----
-
-<div class="post">
+I"Õ<div class="post">
 	<h1 class="pageTitle">About Kim Sung Yoon</h1>
-	<img id="my_img" src="{{ '/assets/img/about.jpg' | prepend: site.baseurl }}" alt="">
-	<p class="intro">An aspiring technology-based entrepreneurs & developer!</p>
+	<img id="my_img" src="/assets/img/about.jpg" alt="" />
+	<p class="intro">An aspiring technology-based entrepreneurs &amp; developer!</p>
 	<p>'Out of Bounds' is the first step to unlock the infinite potential beyond the boundaries of the world.</p>
 	<h2>Career</h2>
 	<ul>
@@ -19,3 +14,4 @@ title: About Kim Sung Yoon
   		<li>2020 A student representative of CSE</li>
   	</ul>
 </div>
+:ET
