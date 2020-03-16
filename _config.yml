@@ -14,8 +14,13 @@ paginate: 5
 navigation:
   - title: Home
     url: /index.html
+  - title: Project
+    url: /project
+  - title: Algorithm
+    url: /algorithm
   - title: About
     url: /about
+  
 
 social:
   github: https://github.com/KimSungYoon-KOK
