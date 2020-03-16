@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Image in Post"
-date:   2020-03-17
+title:  "설로"
+date:   2019-09-30
 ---
 
 <p class="intro"><span class="dropcap">L</span>orem ipsum thor smash liege-bastogne-liege landbouwkrediet ombregt krabbe, rouleur derby is for lovers bonk giro gilbert bidon. Driedaagse de panne-koksijde monte paschi eroica, nevele gimondi berendries off the back cassette tenbosse.</p>
