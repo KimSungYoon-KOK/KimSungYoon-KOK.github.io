@@ -15,9 +15,9 @@ navigation:
   - title: Home
     url: /index.html
   - title: Project
-    url: /project
+    url: /project.md
   - title: Algorithm
-    url: /algorithm
+    url: /algorithm.md
   - title: About
     url: /about
   
