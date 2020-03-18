@@ -5,8 +5,9 @@ title: Algorithm Study
 
 <div class="algorithm" id="algorithm">
   <h1 class="pageTitle">Algorithm</h1>
+
   <ul class="posts noList">
-    {% for post in paginator.posts %}
+    {% for post in posts.algorithm %}
       <li>
         <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
         <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
@@ -14,6 +15,7 @@ title: Algorithm Study
       </li>
     {% endfor %}
   </ul>
+
   <!-- Pagination links -->
   <div class="pagination">
     {% if paginator.previous_page %}
