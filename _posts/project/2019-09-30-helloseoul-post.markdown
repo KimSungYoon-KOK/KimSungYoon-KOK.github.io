@@ -2,6 +2,7 @@
 layout: post
 title:  "설로"
 tags: [project, android, app]
+category: [Project]
 date:   2019-09-30
 ---
 
