@@ -21,7 +21,7 @@ navigation:
   - title: About
     url: /about
   - title: 개인정보
-    url: /private.html
+    url: /private
   
 
 social:
