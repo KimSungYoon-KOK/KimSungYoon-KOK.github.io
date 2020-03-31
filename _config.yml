@@ -20,8 +20,8 @@ navigation:
     url: /categories
   - title: About
     url: /about
-  - title: 개인정보
-    url: /private.html
+  - title: 개인정보처리방침
+    url: /private
   
 
 social:
