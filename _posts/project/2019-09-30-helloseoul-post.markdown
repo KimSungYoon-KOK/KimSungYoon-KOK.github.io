@@ -6,6 +6,8 @@ category: [Project]
 date:   2019-09-30
 ---
 
+ <meta content="https://kimsungyoon-kok.github.io/assets/img/helloseoul.png" property="og:image">
+
 <p class="intro"><span class="dropcap">우</span>리는 서울로 갑니다.<br>2019 서울시 앱 공모전</p>
 
 Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omnium commissaire ronde van vlaanderen horizontally stiff but vertically compliant muur, valkenberg jens paris-roubaix. Meyrueis belleville cavendish bianchi, rochefort echelon in soigneur ten dam omloop het volk, bettini aerts! Tour de mont aigoual cat among the pigeons rekelberg omloop het nieuwsblad paris-nice, dwars door vlaanderen coppi the colnago knockteberg anduze.
