@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Privacy Policy
+title: 개인 정보 처리 방침-학점 메이트
 ---
 
 <div class="post">
