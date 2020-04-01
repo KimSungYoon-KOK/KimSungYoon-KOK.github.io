@@ -4,9 +4,8 @@ title:  "설로"
 tags: [project, android, app]
 category: [Project]
 date:   2019-09-30
+img: "https://kimsungyoon-kok.github.io/assets/img/helloseoul.png"
 ---
-
- <meta content="https://kimsungyoon-kok.github.io/assets/img/helloseoul.png" property="og:image">
 
 <p class="intro"><span class="dropcap">우</span>리는 서울로 갑니다.<br>2019 서울시 앱 공모전</p>
 
