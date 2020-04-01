@@ -8,7 +8,7 @@ image: "helloseoul.png"
 description: "프로젝트: 설로 포스팅입니다."
 ---
 
-<p class="intro"><span class="dropcap">우</span>리는 서울로 갑니다.<br>2019 서울시 앱 공모전</p>
+<p class="intro"><span class="dropcap">우</span>리는 서울로 갑니다.<br><br>2019 서울시 앱 공모전</p>
 
 Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omnium commissaire ronde van vlaanderen horizontally stiff but vertically compliant muur, valkenberg jens paris-roubaix. Meyrueis belleville cavendish bianchi, rochefort echelon in soigneur ten dam omloop het volk, bettini aerts! Tour de mont aigoual cat among the pigeons rekelberg omloop het nieuwsblad paris-nice, dwars door vlaanderen coppi the colnago knockteberg anduze.
 
