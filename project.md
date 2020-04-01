@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Project
+description: "KOK 개발 블로그 : 프로젝트 페이지"
 ---
 
 <div class="project" id="project">
