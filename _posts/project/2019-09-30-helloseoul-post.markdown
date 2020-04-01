@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Android][Kotlin]설로"
+title:  "Hello Seoul, 설로"
 tags: [project, android, app, kotlin]
 category: [Project]
 date:   2019-09-30
