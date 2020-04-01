@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "설로"
-tags: [project, android, app]
+title:  "[Android][Kotlin]설로"
+tags: [project, android, app, kotlin]
 category: [Project]
 date:   2019-09-30
 image: "helloseoul.png"
-description: "프로젝트: 설로 포스팅입니다."
+description: "[Android][kotlin]프로젝트: 설로 포스팅입니다."
 ---
 
 <p class="intro"><span class="dropcap">새</span>로운 서울을 만나다.<br>우리는 서울로 갑니다. Hello Seoul, 설로<br>2019년 서울시 앱 공모전 출품작</p>
