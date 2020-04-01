@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "설로"
+description: "프로젝트: 설로 포스팅" 
 tags: [project, android, app]
 category: [Project]
 date:   2019-09-30
