@@ -1,7 +1,7 @@
 title: Out of Bounds
 description: KOK 개발 블로그
 
-url: http://KimSungYoon-KOK.github.io
+url: http://kimsungyoon-kok.github.io
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
