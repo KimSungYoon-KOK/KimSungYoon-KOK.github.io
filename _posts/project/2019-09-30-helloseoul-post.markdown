@@ -22,6 +22,9 @@ Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omniu
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
 
   <!-- Initialize Swiper -->
@@ -30,6 +33,9 @@ Bahamontes lanterne rouge normandie belgium. Fred paris-nice arrivere, for omniu
       pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
+      }, navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
     });
   </script>
