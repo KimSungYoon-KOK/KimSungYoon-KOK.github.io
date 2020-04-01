@@ -8,7 +8,7 @@ image: "helloseoul.png"
 description: "[Android][kotlin]프로젝트: 설로 포스팅입니다."
 ---
 
-<p class="intro"><strong>새로운 서울을 만나다.<br><br> 우리는 서울로 갑니다, 설로<br>[Android][Kotlin][어플]</strong></p>
+<p class="intro"><strong>새로운 서울을 만나다.<br>우리는 서울로 갑니다, 설로</strong><br>[Android][Kotlin][어플]</p>
 
 
   <!-- Swiper -->
