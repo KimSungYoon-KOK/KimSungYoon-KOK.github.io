@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Project
-description: "KOK 개발 블로그 : 프로젝트 페이지"
 ---
+
+<meta property="og:description" content="KOK 개발 블로그 : 프로젝트 페이지">
 
 <div class="project" id="project">
   <h1 class="pageTitle">Project</h1>
