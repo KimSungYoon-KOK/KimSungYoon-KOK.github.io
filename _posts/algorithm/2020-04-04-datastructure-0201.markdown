@@ -2,7 +2,7 @@
 layout: post
 title:  "포인터의 이해"
 date:   2020-04-04
-tags: [c++,c, data structure]
+tags: [c++,c,datastructure]
 category: [Algorithm]
 ---
 
