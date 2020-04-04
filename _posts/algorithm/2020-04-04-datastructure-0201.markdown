@@ -6,7 +6,7 @@ tags: [c++,c,datastructure]
 category: [Algorithm]
 ---
 
-<p class="intro"><span class="dropcap">Y</span>ou'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes! To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
+<p class="intro"><span class="dropcap">포</span>인터를 사용하는 이유에 대해 알아보고 포인터의 기능과 사용법에 대해 알아보겠습니다.</p>
 
 1. 주소를 사람이 사용해야 하나?
  - 모든 변수를 다 만들수 없고, 메모리를 얼마나 쓸지 알 수 없기 때문에

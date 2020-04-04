@@ -6,7 +6,7 @@ tags: [algorithm, c++, baekjoon, greedy]
 category: [Algorithm]
 ---
 
-<p class="intro"><span class="dropcap">Y</span>ou'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes! To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
+<p class="intro"><span class="dropcap">수</span>학적 귀납법에 대해서 알아보고 재귀 함수를 수학적 귀납법으로 정확성 증명하는 부분에 대해 알아보겠습니다. 또한 binary search를 예시로 시간 복잡도까지 계산해보겠습니다.</p>
 
 1. 수학적 귀납법
  - 수학적 귀납법의 기본형 : 
