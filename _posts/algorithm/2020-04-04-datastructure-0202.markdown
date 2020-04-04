@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ""
+title:  "[자료구조]수학적 귀납법"
 date:   2020-04-04
 tags: [algorithm, c++, baekjoon, greedy]
 category: [Algorithm]
