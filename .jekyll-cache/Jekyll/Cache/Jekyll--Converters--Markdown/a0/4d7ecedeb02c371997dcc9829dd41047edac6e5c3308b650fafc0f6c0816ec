@@ -1,0 +1,46 @@
+I""<p class="intro"><span class="dropcap">A</span>ws(Amazon web service)에서 EC2 인스턴스를 만들어 보고 관리하는 방법에 대해 알아보겠습니다. (운영 체제: MacOS)</p>
+
+<h3 id="1ec2-란">1.EC2 란?</h3>
+
+<p>AWS 클라우드에서 확장식 컴퓨팅을 제공하는 것으로 Amazon Elastic Compute Cloud(Amazon EC2) 입니다. 쉽게 말해 Elastic(탄력적)으로 가상 서버를 운용할 수 있게 해주는 것으로 서버의 규모를 빠르게 확장하거나 축소하여 서버 트래픽 예측 필요성을 줄여 줍니다. EC2의 다양한 기능과 더 자세한 설명이 필요하신 분은 아마존 도큐먼트를 읽어보시면 좋습니다. (https://docs.aws.amazon.com/ec2/index.html)</p>
+
+<h3 id="2ec2-만들기">2.EC2 만들기</h3>
+<p>먼저 https://aws.amazon.com/ko/ 에 들어가서 콘솔에 로그인 해준 다음 단계별로 아래 사진과 같이 따라 하시면 됩니다. EC2 를 생성하는 과정은 어렵지 않게 하실 수 있습니다. 처음 생성할 때 주의 하실 부분은 왼쪽 상단의 서버 위치를 ‘아시아 서울’로 해주시는게 좋습니다. 아무래도 거리가 멀면 속도는 느려질 수 밖에 없습니다.</p>
+
+<p>1단계. 용도에 따라 정말 많은 AMI가 있습니다만, 저는 실습을 위한 것이기 때문에 프리티어 사용 가능하고 사용하기 편한 Ubuntu Server 20.04 버전으로 선택했습니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/01_step1.png" alt="" />
+ 여기서 AMI는 EC2 서버에 설치하는 운영체제 정도로 생각하시면 좋을 듯 합니다. EC2 서버에 운영 체제를 Ubuntu로 설치 해서 가상의 컴퓨터를 하나 더 만드는 것입니다.</p>
+
+<p>2단계. 인스 턴스 유형도 목적에 맞게 사용하시면 됩니다. 저는 실습 용도로 사용하기 때문에 프리티어가 가능한 t2.micro를 선택하였습니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/02_step2.png" alt="" /></p>
+
+<p>3단계. 인스턴스 세부 정보입니다. 인스턴스 개수 정도만 선택하시고 다른 부분은 아직 안 건들여도 됩니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/03_step3.png" alt="" /></p>
+
+<p>4단계. 스토리지 입니다. 이 부분도 그냥 기본값으로 하시면 됩니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/04_step4.png" alt="" /></p>
+
+<p>5단계. 태그를 추가합니다. 키와 값을 본인이 하고 싶은 이름이로 입력하시면 됩니다. 저는 실습이므로 키는 ‘Class’ 값은 ‘2020 Cloud Web Service’로 정했습니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/05_step5.png" alt="" /></p>
+
+<p>6단계. 보안 그룹 구성은 서버의 보안과 관련되어있으므로 매우 중요한 부분입니다. 새 보안 그룹을 생성해서 SSH로 선택해주시면 됩니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/06_step6.png" alt="" /></p>
+
+<p>7단계. 인스턴스 정보를 한번 더 확인하고 시작할 수 있습니다. 아래 사진에 보시면 보안 그룹 구성을 완전히 하지 않아서 퍼블릭으로 선언 되어 있다는 경고 문구가 있습니다. 보안 그룹은 생성 후에 다시 수정 할 수 있으므로 일단은 무시하고 시작하겠습니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/07_step7.png" alt="" /></p>
+
+<p>시작하기를 누르면 아래와 같은 창이 생성 됩니다. 키 페어 이름은 본인이 원하는 이름으로 입력하시면 됩니다. 여기서 주의할 점은 키 페어 다운로드를 눌러서 꼭 저장해 두셔야 합니다. EC2에서는 퍼블릭 키를 AWS에 저장하고 프라이빗 키를 사용자가 저장하여 인스턴스에 안전하게 접속할 수 있도록 합니다. 따라서 사용자의 프라이빗 키를 잃어버리면 매우 곤란할 수 있으니 꼭 저장 잘 해두시기 바랍니다.
+ <img id="my_img" src="/assets/img/CWS_EC2_1/08_keypair.png" alt="" /></p>
+
+<p>생성이 완료되면 아래와 같이 인스턴스가 상태가 ‘실행 중’이라고 뜨며 정상 작동 하는 것을 볼 수 있습니다.<br />
+ <img id="my_img" src="/assets/img/CWS_EC2_1/09_createcomplete.png" alt="" /></p>
+
+<h3 id="3ec2-관리하기">3.EC2 관리하기</h3>
+
+<p>이제 EC2 인스턴스를 생성 완료 했으니 관리하는 방법을 한번 알아보겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">int</span> <span class="o">*</span><span class="nb">p</span><span class="p">;</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="n">new</span> <span class="n">int</span><span class="p">;</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span> <span class="n">int</span><span class="p">);</span></code></pre></figure>
+
+:ET

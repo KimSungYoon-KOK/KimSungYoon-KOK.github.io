@@ -1,0 +1,32 @@
+I"�<p class="intro"><span class="dropcap">A</span>ws(Amazon web service)에서 EC2 인스턴스를 만들어 보고 관리하는 방법에 대해 알아보겠습니다. (운영 체제: MacOS)</p>
+
+<p>1.EC2 란?</p>
+
+<p>2.EC2 만들기
+ 먼저 https://aws.amazon.com/ko/ 에 들어가서 콘솔에 로그인 해준 다음 아래 사진과 같이 따라 하시면 됩니다. EC2 를 생성하는 과정은 어렵지 않게 하실 수 있습니다.</p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/01_step1.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/02_step2.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/03_step3.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/04_step4.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/05_step5.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/06_step6.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/07_step7.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/08_keypair.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/09_createcomplete.png" alt="" /></p>
+
+<p>3.EC2 관리하기</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">int</span> <span class="o">*</span><span class="nb">p</span><span class="p">;</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="n">new</span> <span class="n">int</span><span class="p">;</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span> <span class="n">int</span><span class="p">);</span></code></pre></figure>
+
+:ET

@@ -1,0 +1,76 @@
+I"�%<p class="intro"><span class="dropcap">A</span>ws(Amazon web service)에서 EC2 인스턴스를 만들어 보고 관리하는 방법에 대해 알아보겠습니다. (운영 체제: MacOS)</p>
+
+<ol>
+  <li>
+    <p>EC2 란?</p>
+  </li>
+  <li>
+    <p>EC2 만들기
+ 먼저 https://aws.amazon.com/ko/ 에 들어가서 콘솔에 로그인 해준 다음 아래 사진과 같이 따라 하시면 됩니다. EC2 를 생성하는 과정은 어렵지 않게 하실 수 있습니다.</p>
+  </li>
+</ol>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_1/01_step1.png" alt="" /></p>
+
+<ol>
+  <li>EC2 관리하기
+    <ul>
+      <li>모든 변수를 다 만들수 없고, 메모리를 얼마나 쓸지 알 수 없기 때문에</li>
+      <li>메모리 ‘할당’이 필요함</li>
+      <li>c언어에서는 malloc 사용</li>
+      <li>예시 : outlook</li>
+    </ul>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">int</span> <span class="o">*</span><span class="nb">p</span><span class="p">;</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="n">new</span> <span class="n">int</span><span class="p">;</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span> <span class="n">int</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li>p는 800번지 주소라고 가정</li>
+  <li>p에는 800이라는 숫자만 저장되어 있다</li>
+  <li>현재로서는 800번지에 가면 type이 int인지  char인지 알수 없다.</li>
+  <li>즉, p변수를 만들때 주소가 가르키는 것이 어떤 type 인지 알려주기 위해 int *p라고 쓴다.</li>
+  <li>int *p : p에 있는 값을 주소로 생각해서 그 주소가 가리키는 곳으로 간다.(그 목적지에는 int형 자료가 있다)</li>
+</ul>
+
+<p>[정리_포인터]</p>
+<ul>
+  <li>이름은 없지만 주소만 있는 변수가 있다. 그 주소를 저장하는 변수가 포인터이다.</li>
+  <li>Type이 주소인 변수</li>
+  <li>즉, 저장하는 값을 주소로 해석하기로 약속한 변수</li>
+  <li>결과 : 그 주소를 확인해보면 어떤 Type의 변수가 있는지를 추가로 표시해 주어야 한다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="n">int</span> <span class="o">*</span><span class="nb">p</span><span class="p">;</span>
+<span class="n">int</span> <span class="o">**</span><span class="n">q</span><span class="p">;</span>
+
+<span class="nb">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>		<span class="sr">//</span><span class="n">p</span><span class="err">에</span> <span class="n">a</span><span class="err">의</span> <span class="err">주소를</span> <span class="err">대입</span> <span class="p">(</span><span class="n">a</span><span class="err">의</span> <span class="err">주소가</span> <span class="mi">800</span><span class="err">번지라고</span> <span class="err">가정</span><span class="p">)</span>
+<span class="o">*</span><span class="nb">p</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>		<span class="sr">//</span><span class="n">p</span><span class="err">가</span> <span class="err">가리키는</span> <span class="mi">800</span><span class="err">번지에</span> <span class="mi">30</span><span class="err">을</span> <span class="err">저장</span> <span class="p">(</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="err">과</span> <span class="err">같다</span><span class="p">)</span>
+
+<span class="sr">//</span><span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>	<span class="sr">//</span><span class="err">오류</span> <span class="err">코드</span><span class="p">:</span> <span class="n">a</span><span class="err">는</span> <span class="err">변수이기</span> <span class="err">때문에</span> <span class="err">주소가</span> <span class="err">있다</span><span class="o">.</span> <span class="err">하지만</span> <span class="err">주소의</span> <span class="err">주소는</span> <span class="err">있을</span> <span class="err">수</span> <span class="err">없다</span>
+<span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nb">p</span><span class="p">;</span>		<span class="sr">//</span><span class="err">맞는</span> <span class="err">코드</span> <span class="p">:</span> <span class="n">p</span><span class="err">의</span> <span class="err">주소를</span> <span class="err">저장할</span> <span class="err">수는</span> <span class="err">있다</span><span class="p">.</span>
+<span class="nf">*</span><span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span></code></pre></figure>
+
+<p>-int **q : q의 내용은 주소이고, 그 주소로 가면 또 주소가 있고 또 그 주소로 가보면 int 자료형이 있다.</p>
+<ul>
+  <li>즉, (q가 100번지라고 가정) 100번지 가면 *q가 있고, *q를 확인 해보면 거기에도 주소가 있다. ( *q가 200번지라고 가정)
+다시  200번지에 가면 int 자료형이 있다.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">char</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="n">int</span> <span class="o">*</span><span class="nb">p</span><span class="p">,</span> <span class="o">*</span><span class="n">r</span><span class="p">;</span>
+<span class="n">int</span> <span class="o">**</span><span class="n">q</span><span class="p">;</span>
+
+<span class="nb">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span> <span class="o">*</span><span class="nb">p</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span> <span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nb">p</span><span class="p">;</span> <span class="o">**</span><span class="n">q</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="o">*</span><span class="nb">p</span><span class="p">;</span>	<span class="sr">//</span><span class="err">맞는</span> <span class="err">코드</span> <span class="p">:</span> <span class="n">int</span><span class="err">형</span> <span class="o">+</span> <span class="n">int</span><span class="err">형</span>
+<span class="sr">//</span><span class="nb">p</span> <span class="o">=</span> <span class="nb">p</span> <span class="o">+</span> <span class="n">r</span><span class="p">;</span>	<span class="sr">//</span><span class="err">오류</span> <span class="err">코드</span> <span class="p">:</span> <span class="nb">p</span><span class="p">,</span> <span class="n">r</span><span class="err">은</span> <span class="err">주소</span><span class="o">.</span> <span class="err">주소</span> <span class="o">+</span> <span class="err">주소는</span> <span class="err">아무</span> <span class="err">의미가</span> <span class="err">없다</span><span class="o">.</span> <span class="err">즉</span><span class="p">,</span> <span class="err">주소간의</span> <span class="err">더하기는</span> <span class="err">허용하지</span> <span class="err">않는다</span><span class="p">.</span>
+<span class="nf">p</span> <span class="o">=</span> <span class="nb">p</span> <span class="o">-</span> <span class="n">r</span><span class="p">;</span>	<span class="sr">//</span><span class="err">맞는</span> <span class="err">코드</span> <span class="p">:</span> <span class="n">p</span><span class="err">의</span> <span class="err">주소와</span> <span class="n">r</span><span class="err">의</span> <span class="err">주소가</span> <span class="err">얼마나</span> <span class="err">떨어져</span> <span class="err">있는지</span> <span class="err">알</span> <span class="err">수</span> <span class="err">있기</span> <span class="err">때문에</span> <span class="err">주소간의</span> <span class="err">빼기는</span> <span class="err">허용</span> <span class="err">된다</span><span class="p">.</span>
+<span class="nf">p</span> <span class="o">=</span> <span class="nb">p</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>	<span class="sr">//</span><span class="err">맞는</span> <span class="err">코드</span> <span class="p">:</span> <span class="n">p</span><span class="err">의</span> <span class="err">주소에서</span> <span class="err">옆으로</span> <span class="mi">3</span><span class="err">칸</span> <span class="err">떨어진</span> <span class="err">곳으로</span> <span class="err">간다</span><span class="o">.</span><span class="p">(</span><span class="n">int</span><span class="err">형</span> <span class="mi">3</span><span class="err">칸</span> <span class="err">이동</span> <span class="p">:</span> <span class="mi">3</span><span class="no">X4byte</span> <span class="o">=</span> <span class="mi">12</span><span class="n">byte</span><span class="err">만큼</span> <span class="err">이동</span><span class="p">)</span></code></pre></figure>
+
+:ET
