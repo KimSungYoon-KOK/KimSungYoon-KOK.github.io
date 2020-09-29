@@ -1,0 +1,37 @@
+I"�<div id="articles">
+  <h1>Articles</h1>
+  <ul class="posts noList">
+    
+      <li>
+      	<span class="date">29 Sep 2020</span>
+      	<h3><a href="/blog/cws-ec2-1/">Cws Ec2 1</a></h3>
+      	<p class="description"></p>
+      </li>
+    
+      <li>
+      	<span class="date">04 Apr 2020</span>
+      	<h3><a href="/blog/datastructure-0202/">[자료구조]수학적 귀납법</a></h3>
+      	<p class="description">수학적 귀납법에 대해서 알아보고 재귀 함수를 수학적 귀납법으로 정확성 증명하는 부분에 대해 알아보겠습니다. 또한 binary search를 예시로 시간 복잡도까지 계산해보겠습니다.  수학적 귀납법        ...</p>
+      </li>
+    
+      <li>
+      	<span class="date">04 Apr 2020</span>
+      	<h3><a href="/blog/datastructure-0201/">[자료구조] 포인터의 이해</a></h3>
+      	<p class="description">포인터를 사용하는 이유에 대해 알아보고 포인터의 기능과 사용법에 대해 알아보겠습니다.  주소를 사람이 사용해야 하나?          모든 변수를 다 만들수 없고, 메모리를 얼마나 쓸지 알 수 없기 때문에   ...</p>
+      </li>
+    
+      <li>
+      	<span class="date">30 Sep 2019</span>
+      	<h3><a href="/blog/helloseoul-post/">Hello Seoul, 설로</a></h3>
+      	<p class="description">[Android][kotlin]프로젝트: 설로 포스팅입니다.</p>
+      </li>
+    
+      <li>
+      	<span class="date">12 Dec 2014</span>
+      	<h3><a href="/blog/code-test/">Post With A Code Snippet</a></h3>
+      	<p class="description">You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see y...</p>
+      </li>
+    
+  </ul>
+</div>
+:ET
