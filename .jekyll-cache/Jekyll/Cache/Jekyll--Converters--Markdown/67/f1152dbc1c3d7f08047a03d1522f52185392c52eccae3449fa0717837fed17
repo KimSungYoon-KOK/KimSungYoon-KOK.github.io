@@ -1,0 +1,11 @@
+I"�<p class="intro"><span class="dropcap">A</span>ws(Amazon web service)에서 EC2 인스턴스를 만들었으니 터미널에서 EC2에 접근하고 관리하는 방법에 대해 알아보겠습니다. (운영 체제: MacOS)</p>
+
+<h3 id="1-ec2-인스턴스-연결하기">1. EC2 인스턴스 연결하기</h3>
+<p>MacOS &amp; Linux 에서는 ssh를 이용하고 MS Windows에서는 Putty를 이용하여 인스턴스를 연결합니다. 저는 맥북을 사용하고 있으므로 ssh를 이용하여 연결해 보겠습니다.</p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_3/01.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_3/02.png" alt="" /></p>
+
+<p><img id="my_img" src="/assets/img/CWS_EC2_3/03.png" alt="" /></p>
+:ET

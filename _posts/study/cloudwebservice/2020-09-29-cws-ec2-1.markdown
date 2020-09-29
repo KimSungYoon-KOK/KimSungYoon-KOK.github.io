@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "AWS EC2 개발하기"
+title:  "AWS EC2 개발하기 1"
 date:   2020-09-29
 tags: [aws, cws]
 category: [Cloud Web Service]
 ---
 
-<p class="intro"><span class="dropcap">A</span>ws(Amazon web service)에서 EC2 인스턴스를 만들어 보고 관리하는 방법에 대해 알아보겠습니다. (운영 체제: MacOS)</p>
+<p class="intro"><span class="dropcap">A</span>ws(Amazon web service)에서 EC2 인스턴스를 만들어 보고 관리하는 방법에 대해 알아보겠습니다.</p>
 
 ### 1.EC2 란?
 
@@ -48,38 +48,43 @@ AWS 클라우드에서 확장식 컴퓨팅을 제공하는 것으로 Amazon Elas
 
 이제 EC2 인스턴스를 생성 완료 했으니 관리하는 방법을 한번 알아보겠습니다.
 
+'작업'탭을 보시면 인스턴스 중지, 시작, 재부팅 등 여러 작업을 실행 할 수 있습니다. 한번 중지 해보겠습니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/01.png' | prepend: site.baseurl }}" alt="">
 
+'중지'를 누르면 인스턴스가 중지되고 IP 주소는 반환하게 됩니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/02.png' | prepend: site.baseurl }}" alt="">
 
+다시 '시작'시켜 보겠습니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/03.png' | prepend: site.baseurl }}" alt="">
 
+여기서 당연하지만 독특한 부분은 IP 주소가 이전과는 다르게 바뀐다는 것입니다. 중지 했을때와 다시 시작 했을 때 IP 주소가 바뀌지 않으려면 Elastic IP(탄력적 IP)를 사용해야 합니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/04.png' | prepend: site.baseurl }}" alt="">
 
-<img id="my_img" src="{{ '/assets/img/CWS_EC2_2/05.png' | prepend: site.baseurl }}" alt="">
-
+왼쪽 메뉴 바에서 탄력적 IP 메뉴를 찾아서 클릭해 보시면 지금은 아무것도 할당 되어 있지 않을 겁니다. 이제 우측 상단의 탄력적 IP 주소 할당을 클릭해 봅시다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/06.png' | prepend: site.baseurl }}" alt="">
 
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/07.png' | prepend: site.baseurl }}" alt="">
 
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/08.png' | prepend: site.baseurl }}" alt="">
 
+이렇게 탄력적 IP가 생성되면 주소 연결을 통해 기존에 만든 EC2와 연결해야 합니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/09.png' | prepend: site.baseurl }}" alt="">
 
-<img id="my_img" src="{{ '/assets/img/CWS_EC2_2/10.png' | prepend: site.baseurl }}" alt="">
-
+기존에 만들어진 인스턴스와 연결을 시켜 줍니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/11.png' | prepend: site.baseurl }}" alt="">
 
+그러면 이렇게 새로운 IP가 연결되었다는 알림이 뜹니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/12.png' | prepend: site.baseurl }}" alt="">
 
+다시 인스턴스 페이지로 와보시면 퍼블릭 IPv4가 방금 만든 탄력적 IP로 되어 있는 것을 확인 하실 수 있습니다. 이렇게 만들어진 탄력적 IP는 인스턴스의 작업 시작, 중지와 관계 없이 계속 일정하게 고정되어 있습니다. 탄력적 IP를 명시적으로 해제하거나 릴리즈 해주면 다른 IP주소로 변경 하실 수 있습니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/13.png' | prepend: site.baseurl }}" alt="">
 
+아까 그냥 넘어 갔었던 보안 페이지를 한 번 살펴 보겠습니다. 보안 그룹을 클릭해서 들어가 보시면 아래와 같습니다.
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/14.png' | prepend: site.baseurl }}" alt="">
 
+인바운드 규칙과 아웃바운드 규칙 두가지가 있는 것을 보실 수 있습니다. 말 그대로 인바운드는 EC2로 접근할 때의 보안 규칙이고 아웃바운드는 EC2가 외부로 다시 송출할 때의 보안 규칙입니다. 
 <img id="my_img" src="{{ '/assets/img/CWS_EC2_2/15.png' | prepend: site.baseurl }}" alt="">
 
-{% highlight ruby %}
-int *p;
-p = new int;
-p = malloc(sizeof int);
-{% endhighlight %}
+
+### 4. 다음
+다음 포스트에서는 EC2 인스턴스에 SW를 설치하는 법에 대해 알아보겠습니다.

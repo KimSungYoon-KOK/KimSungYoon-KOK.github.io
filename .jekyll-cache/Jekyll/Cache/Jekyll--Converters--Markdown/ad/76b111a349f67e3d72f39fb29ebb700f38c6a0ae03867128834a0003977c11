@@ -1,0 +1,28 @@
+I"�	<p class="intro"><span class="dropcap">A</span>ws(Amazon web service)에서 EC2 인스턴스를 만들었으니 터미널에서 EC2에 접근하고 관리하는 방법에 대해 알아보겠습니다. (운영 체제: MacOS)</p>
+
+<h3 id="1-ec2-인스턴스-연결하기">1. EC2 인스턴스 연결하기</h3>
+<p>MacOS &amp; Linux 에서는 ssh를 이용하고 MS Windows에서는 Putty를 이용하여 인스턴스를 연결합니다. 저는 맥북을 사용하고 있으므로 ssh를 이용하여 연결해 보겠습니다.</p>
+
+<p>우선 ‘작업’의 연결을 클릭해 보시면 아래와 같이 연결 방법에 대한 설명이 뜹니다.
+<img id="my_img" src="/assets/img/CWS_EC2_3/01.png" alt="" /></p>
+
+<p>1~4번 설명을 잘 읽어 보시고 따라하시면 어렵지 않게 하실 수 있습니다. 
+<img id="my_img" src="/assets/img/CWS_EC2_3/02.png" alt="" /></p>
+<ol>
+  <li>본인의 SSH 클라이언트를 열어 주세요.</li>
+  <li>직전 포스트 “AWS EC2 개발하기 1”에서 인스턴스를 생성할 때 키 파일을 다운 후 잘 저장해 두라고 말씀드렸습니다. 잘 저장해둔 파일이 있는 폴더로 이동하시면 됩니다.</li>
+  <li>명령문을 그대로 복사해서 입력해 주시면 됩니다. 간단히 설명 드리자면 파일 권한을 400으로 설정하면 파일 소유자에게만 읽기 권한이 생기게 되어 안전하게 보관 하실 수 있습니다.</li>
+  <li>마지막으로 아래 예시문을 복사 붙여넣기 하시면 EC2에 성공적으로 연결 하신것을 보실 수 있습니다.</li>
+</ol>
+
+<p>성공적으로 EC2에 접근하는 것을 확인 하실 수 있습니다.
+<img id="my_img" src="/assets/img/CWS_EC2_3/03.png" alt="" /></p>
+
+<h3 id="2-ec2-인스턴스에-sw-설치하기">2. EC2 인스턴스에 SW 설치하기</h3>
+<ol>
+  <li>Ubuntu 업그레이드하기</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>       <span class="sr">//</span><span class="no">Update</span> <span class="n">apt</span> <span class="n">package</span> <span class="n">index</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span>      <span class="sr">//</span><span class="no">Upgrade</span> <span class="n">package</span></code></pre></figure>
+:ET
