@@ -17,5 +17,6 @@ title: About Kim Sung Yoon
   		<li>2018 Student of Computer Science Engineering, Konkuk Univ.</li>
       	<li>2020 ROTC 60th</li>
   		<li>2020 The student representative of CSE</li>
+		<li>JunctionXSeoul 2020 Naver 3rd Winner</li>
   	</ul>
 </div>
