@@ -22,48 +22,48 @@ Lambda를 생성하는데 크게 3가지 방법이 있습니다.
 ### 1. Inline Code
 
 1. 함수 생성을 클릭하여 새로운 함수를 만들겠습니다.
-    - 간단한 계산기 실습을 해볼테니 이름은 myCalculator로 짓고, 런타임은 Node.js 12.x를 사용하겠습니다. 앞로도 모든 실습은 Node.js로 실습하겠습니다. 실행 역할 에서는 Lambda 새역할을 생성해서 디폴트값을 주도록 하겠습니다. 여기서는 기존에 미리 만든 역할을 사용할 수 있고 탬플릿을 이용할 수 도 있습니다.
+ - 간단한 계산기 실습을 해볼테니 이름은 myCalculator로 짓고, 런타임은 Node.js 12.x를 사용하겠습니다. 앞로도 모든 실습은 Node.js로 실습하겠습니다. 실행 역할 에서는 Lambda 새역할을 생성해서 디폴트값을 주도록 하겠습니다. 여기서는 기존에 미리 만든 역할을 사용할 수 있고 탬플릿을 이용할 수 도 있습니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.20.22.png' | prepend: site.baseurl }}" alt="">
 
 2. 생성 후 첫 화면을 보시면 '구성', '권한', '모니터링' 세가지 항목을 컨트롤 할 수 있습니다. 
-    - 저희는 우선 Lambda를 생성해 보는 것이 목표이므로 바로 아래의 함수 코드를 살펴보도록 하겠습니다.
+ - 저희는 우선 Lambda를 생성해 보는 것이 목표이므로 바로 아래의 함수 코드를 살펴보도록 하겠습니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.21.25.png' | prepend: site.baseurl }}" alt="">
 
 3. 함수 코드의 handler 안에 계산기 기능을 살짝 구현 해보겠습니다.
-    - 주의 : 코드 변경 후에는 Deploy 버튼을 꼭 클릭해 주셔야 합니다. 일종의 저장, 디버깅 버튼 정도의 역할 하신다고 생각하시면 됩니다.
+ - 주의 : 코드 변경 후에는 Deploy 버튼을 꼭 클릭해 주셔야 합니다. 일종의 저장, 디버깅 버튼 정도의 역할 하신다고 생각하시면 됩니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.31.01.png' | prepend: site.baseurl }}" alt="">
 
-    - 이렇게 하시면 끝입니다. 매우 간단하게 lambda를 만들 수 있습니다.
+ - 이렇게 하시면 끝입니다. 매우 간단하게 lambda를 만들 수 있습니다.
 
 4. 테스트 버튼을 눌러서 테스트 한번 해보겠습니다.
-    - 테스트는 직접 케이스를 넣어서 테스트 해볼 수 있습니다.
+ - 테스트는 직접 케이스를 넣어서 테스트 해볼 수 있습니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.35.03.png' | prepend: site.baseurl }}" alt="">
 
 ### 2. ZIP 파일 업로드
 
 1. 먼저 inline 방식과 똑같은 방식으로 함수를 생성해줍니다. 
-    - 이번에는 함수 이름을 'myCalculator_ZIP'로 하겠습니다.
+ - 이번에는 함수 이름을 'myCalculator_ZIP'로 하겠습니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.39.23.png' | prepend: site.baseurl }}" alt="">
 
 2. 아까와 동일한 코드를 이번에는 vs code를 이용해 작성했습니다.
-    - 터미널에 보이는 것 처럼 index.js 파일을 'myCalculator.zip'파일로 압축해주겠습니다.
+ - 터미널에 보이는 것 처럼 index.js 파일을 'myCalculator.zip'파일로 압축해주겠습니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.43.01.png' | prepend: site.baseurl }}" alt="">
 
 3. 다시 AWS 콘솔로 돌아오셔서 '작업' → '.zip 파일 업로드'를 클릭 하시면 파일을 업로드 할 수 있습니다. 
-    - 파일을 업로드 하면 자동으로 압축을 해제하고 Deploy까지 해줍니다.
+ - 파일을 업로드 하면 자동으로 압축을 해제하고 Deploy까지 해줍니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.43.35.png' | prepend: site.baseurl }}" alt="">
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.43.57.png' | prepend: site.baseurl }}" alt="">
 
 4. 다 됐으면 테스트를 한번 해봅시다.
-    - 테스트 이벤트를 아래와 같이 만들고 '생성'버튼을 클릭해보겠습니다.
+ - 테스트 이벤트를 아래와 같이 만들고 '생성'버튼을 클릭해보겠습니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.44.53.png' | prepend: site.baseurl }}" alt="">
 
@@ -72,20 +72,20 @@ Lambda를 생성하는데 크게 3가지 방법이 있습니다.
 ### 3. AWS S3를 이용해서 생성하기
 
 1. 새로운 함수 생성은 똑같이 진행하시면 됩니다.
-    - 이번에는 'myCalculator_S3'로 생성 했습니다.
+ - 이번에는 'myCalculator_S3'로 생성 했습니다.
 2. AWS 서비스의 S3 로 들어가셔서 버킷을 하나 생성해줍니다.
-    - 저는 기존에 만들어 두었던 '2020-cws-s3'를 이용하도록 하겠습니다.
+ - 저는 기존에 만들어 두었던 '2020-cws-s3'를 이용하도록 하겠습니다.
 3. 버킷에 zip파일을 업로드 해줍니다.
-    - 기존에 만들었던 zip파일을 그대로 쓰도록 하겠습니다.
+ - 기존에 만들었던 zip파일을 그대로 쓰도록 하겠습니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.50.29.png' | prepend: site.baseurl }}" alt="">
 
-    - 파일을 클릭해서 '객체 URL'를 복사합니다.
+ - 파일을 클릭해서 '객체 URL'를 복사합니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.54.41.png' | prepend: site.baseurl }}" alt="">
 
 4. 다시 Lambda로 돌아와서 이번에는 '작업' → 'Amazon S3에서 업로드'를 클릭 하겠습니다.
-    - 이때 링크 URL에 방금 복사했던 링크를 붙여넣기 하시면 됩니다.
+ - 이때 링크 URL에 방금 복사했던 링크를 붙여넣기 하시면 됩니다.
 
 <img id="my_img" src="{{ 'assets/img/CWS_Lambda_1/_2020-11-01__4.55.13.png' | prepend: site.baseurl }}" alt="">
 

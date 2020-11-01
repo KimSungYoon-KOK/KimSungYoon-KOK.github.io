@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "AWS Lambda 생성하기"
+date:   2020-11-01
+tags: [aws, cws]
+category: [Cloud Web Service]
+---
+
+## AWS : Lambda 생성하기2
+
+이번에는 Lambda를 터미널에서 코드로 생성해보겠습니다.
+
+우선, VS code를 실행하고 터미널에서 aws-sdk를 설치해줍니다.
+{% highlight ruby %}
+$ npm install aws-sdk
+{% endhighlight %}
+
+### 1. S3 만들기
+
+1. createS3Object.js 파일을 생성해서 아래와 같이 작성하겠습니다.
+ - 주의하실 부분은 업로드할 버킷의 이름과 버킷에 저장할 파일의 이름 정도입니다.
+ - 코드는 간단하니 따로 설명하지 않겠습니다.
+
+{% highlight ruby %}
+var fs = require('fs');
+var AWS = require('aws-sdk');
+AWS.config.region = 'ap-northeast-2';
+var s3 = new AWS.S3({
+    "apiVersion": '2006-03-01',
+});
+
+function createObject(params) {
+    return new Promise(function (resolve, reject) {
+        s3.upload(params, function (err, data) {
+            if (err) reject(err);
+            else resolve(data);
+        })
+    });
+}
+
+async function createDeploymentPackage (params) {
+    try { 
+        var res = await createObject(params);
+        console.log(res);
+    } catch (err) { console.log(err); }
+}
+
+var lc_params = {
+    Bucket : '2020-cws-s3',                             //업로드 할 버킷의 이름
+    Key : 'myCalculator2.zip',                          //버킷에 저장할 때 사용할 파일 이름
+    Body: fs.createReadStream("./myCalculator.zip")     //버킷에 올릴 파일의 이름
+}
+createDeploymentPackage(lc_params);
+{% endhighlight %}
+
+2. 터미널에서 실행시켜 보겠습니다.
+ - 잘 생성된 것을 확인 할 수 있습니다.
+
+<img id="my_img" src="{{ 'assets/img/CWS_Lambda_2/2020-11-01_5.21.35.png' | prepend: site.baseurl }}" alt="">
+<img id="my_img" src="{{ 'assets/img/CWS_Lambda_2/2020-11-01_5.22.07.png' | prepend: site.baseurl }}" alt="">
+
+
+### 2. Lambda Deploy 하기
+
+1. 버킷에 함수를 올렸으니 이제 Lambda에서 deploy 시켜보겠습니다.
+ - 여기서 주의할 부분은 'Role'입니다. 저는 기존에 생성했던 lambda의 기본 권한을 가져와서 사용해보겠습니다.
+ - 기존에 생성했던 Lambda를 들어가셔서 '역할 ARN' 을 복사 붙여넣기 하여 사용하시면 됩니다.
+
+{% highlight ruby %}
+var AWS = require('aws-sdk');
+AWS.config.region = 'ap-northeast-2';
+var lambda = new AWS.Lambda({
+    "apiVersion": '2015-03-31',
+});
+
+var params = {
+    Code: {
+        S3Bucket : '2020-cws-s3',           //코드가 저장된 버킷의 이름
+        S3Key : 'myCalculator2.zip'         //버킷에 저장된 파일의 이름
+    },
+    FunctionName : 'myCalculator2',         //생성할 Lambda의 이름
+    Handler : 'index.handler',
+    Role : 'YOUR ROLE',        //디폴트 권한을 줍니다.
+    Runtime : 'nodejs12.x',
+    Description : ''
+};
+
+lambda.createFunction (params, function (err, data) {
+    if (err) console.log(err);
+    else console.log(data);
+});
+{% endhidlight %}
+
+2. 실행시켜보겠습니다.
+ - Successful이 나오면 성공한 것입니다.
+ - Lambda에도 제대로 들어가 있네요.
+
+<img id="my_img" src="{{ 'assets/img/CWS_Lambda_2/2020-11-01_5.29.07.png' | prepend: site.baseurl }}" alt="">
+<img id="my_img" src="{{ 'assets/img/CWS_Lambda_2/2020-11-01_5.29.34.png' | prepend: site.baseurl }}" alt="">
+
+### 3. Lambda Invoke
+
+1. 버킷을 만들어서 함수 생성도 했으니, 이제는 함수를 호출해보겠습니다.
+ - 계산기에 넣을 exp 변수를 생성하고 JSON.stringify(exp)로 보내겠습니다.
+
+ <img id="my_img" src="{{ 'assets/img/CWS_Lambda_2/2020-11-01_5.32.15.png' | prepend: site.baseurl }}" alt="">
+
+ ### 정리
+ 이렇게 해서 Lambda를 생성하는 방법에 대해 모두 알아보고 실습했습니다.
