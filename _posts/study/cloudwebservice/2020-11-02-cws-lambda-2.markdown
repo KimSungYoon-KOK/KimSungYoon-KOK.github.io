@@ -6,7 +6,7 @@ tags: [aws, cws]
 category: [Cloud Web Service]
 ---
 
-## AWS : Lambda 생성하기2
+## AWS Lambda 생성하기2
 
 이번에는 Lambda를 터미널에서 코드로 생성해보겠습니다.
 

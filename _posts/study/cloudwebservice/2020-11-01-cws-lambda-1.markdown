@@ -6,7 +6,7 @@ tags: [aws, cws]
 category: [Cloud Web Service]
 ---
 
-## AWS : Lambda 생성하기
+## AWS Lambda 생성하기
 
 Lambda를 생성하는데 크게 3가지 방법이 있습니다.
 
